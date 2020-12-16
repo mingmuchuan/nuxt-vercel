@@ -1,21 +1,27 @@
-<!--
- * @Author: your name
- * @Date: 2020-12-16 15:44:38
- * @LastEditTime: 2020-12-16 15:44:46
- * @LastEditors: your name
- * @Description: In User Settings Edit
- * @FilePath: /nuxt-vercel/pages/index.vue
--->
 <template>
-  <div>index</div>
+  <div>
+    <h1>Hello world!</h1>
+    <p>
+      <nuxt-link to="/about">Go About</nuxt-link>
+    </p>
+    <ul>
+      <li
+        v-for="post in posts"
+        :key="post.id"
+      >{{ post.title }}</li>
+    </ul>
+  </div>
 </template>
 
 <script>
-export default {
+import axios from 'axios'
 
+export default {
+  async asyncData () {
+    const { data } = await axios.get('https://jsonplaceholder.typicode.com/posts')
+    return {
+      posts: data
+    }
+  }
 }
 </script>
-
-<style>
-
-</style>

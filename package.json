@@ -1,11 +1,12 @@
 {
-  "name": "nuxt-vercel",
+  "name": "nuxtjs-demo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
+    "generate": "nuxt generate",
     "start": "nuxt start"
   },
   "keywords": [],
@@ -13,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@nuxtjs/vercel-builder": "^0.18.1",
-    "nuxt": "^2.14.11"
+    "axios": "^0.21.0",
+    "nuxt": "^2.14.9"
   }
 }
